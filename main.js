@@ -28,5 +28,5 @@ app.get('/api/test', (request, response) => {
 });
 
 server.listen(SERVER_PORT, function() {
-  logger.info(`Starting server on port ${SERVER_PORT}`);
+  console.log(`Starting server on port ${SERVER_PORT}`);
 });
