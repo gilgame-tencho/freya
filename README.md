@@ -1,2 +1,2 @@
-# freya
+# Freya
 server side worker
