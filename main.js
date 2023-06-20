@@ -17,15 +17,26 @@ const server_conf = Object.assign(
 const SERVER_NAME = 'main';
 const SERVER_PORT = server_conf.port;
 
+const data = {
+    msg: 'hello friya!',
+    no: 1,
+    index: "hogehoge",
+    token: "",
+    challenge: "",
+    type: "",
+}
+
 // Server config. -----------
 app.use('/static', express.static(__dirname + '/static'));
 
 app.get('/', (request, response) => {
-    response.sendFile(path.join(__dirname, '/static/index.html'));
+    console.log(request.query);
+    response.send(data);
 });
 
 app.get('/api/test', (request, response) => {
-    response.sendFile(path.join(__dirname, '/static/index.html'));
+    console.log(request.query);
+    response.send(data);
 });
 
 server.listen(SERVER_PORT, function() {
