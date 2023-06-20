@@ -7,14 +7,15 @@ const socketIO = require('socket.io');
 const app = express();
 const server = http.Server(app);
 const io = socketIO(server);
+const fs = require('fs');
+const yaml = require('yaml');
 
-// const server_conf = Object.assign(
-//     yaml.parse(fs.readFileSync(__dirname + '/conf/server_conf.yml', 'utf-8')),
-//     yaml.parse(fs.readFileSync(__dirname + '/conf/apl_conf.yml', 'utf-8')),
-// );
+const server_conf = Object.assign(
+    yaml.parse(fs.readFileSync(__dirname + '/conf/server_conf.yml', 'utf-8')),
+);
 
 const SERVER_NAME = 'main';
-const SERVER_PORT = 3000;
+const SERVER_PORT = server_conf.port;
 
 // Server config. -----------
 app.use('/static', express.static(__dirname + '/static'));
