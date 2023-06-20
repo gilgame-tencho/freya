@@ -1,0 +1,19 @@
+{
+  "name": "freya",
+  "version": "1.0.0",
+  "description": "server side worker",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gilgame-tencho/freya.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gilgame-tencho/freya/issues"
+  },
+  "homepage": "https://github.com/gilgame-tencho/freya#readme"
+}

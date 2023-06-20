@@ -7,7 +7,6 @@ const socketIO = require('socket.io');
 const app = express();
 const server = http.Server(app);
 const io = socketIO(server);
-const fs = require('fs');
 
 // const server_conf = Object.assign(
 //     yaml.parse(fs.readFileSync(__dirname + '/conf/server_conf.yml', 'utf-8')),
@@ -21,6 +20,10 @@ const SERVER_PORT = 3000;
 app.use('/static', express.static(__dirname + '/static'));
 
 app.get('/', (request, response) => {
+    response.sendFile(path.join(__dirname, '/static/index.html'));
+});
+
+app.get('/api/test', (request, response) => {
     response.sendFile(path.join(__dirname, '/static/index.html'));
 });
 
