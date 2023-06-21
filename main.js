@@ -59,6 +59,13 @@ app.post('/api/test', (request, response) => {
     response.send(data);
 });
 
+app.post('/api/slack', (request, response) => {
+    console.log("POST /api/slack");
+    console.log(request.body);
+    response.type('text/plain');
+    response.send(request.body.challenge);
+});
+
 server.listen(SERVER_PORT, function() {
   console.log(`Starting server on port ${SERVER_PORT}`);
 });
